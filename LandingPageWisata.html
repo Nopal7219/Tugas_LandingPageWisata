@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagoda Tian Ti Surabaya - Wisata Spiritual & Budaya</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff5f5 0%, #fff7ed 50%, #fffbeb 100%);
+            color: #333;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1) 0%, rgba(234, 88, 12, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 35px,
+                rgba(255, 255, 255, 0.1) 35px,
+                rgba(255, 255, 255, 0.1) 70px
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            color: #b91c1c;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #9a3412;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #555;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(220, 38, 38, 0.4);
+        }
+
+        .section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #b91c1c;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-weight: bold;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffedd5 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .info-card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .description {
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-section {
+            background: linear-gradient(135deg, #ffedd5 0%, #fff5f5 100%);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #dc2626;
+        }
+
+        .table-section {
+            background: white;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+            color: white;
+        }
+
+        th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        tbody tr:hover {
+            background: #fff7ed;
+        }
+
+        .btn-delete {
+            background: #ef4444;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-delete:hover {
+            background: #dc2626;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #999;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #991b1b 0%, #9a3412 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 20px;
+        }
+
+        footer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .form-container {
+                padding: 2rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Pagoda Tian Ti</h1>
+            <h2>Surabaya</h2>
+            <p>Destinasi wisata spiritual dan budaya Tionghoa yang megah di Surabaya</p>
+            <button class="btn-primary" onclick="scrollToBooking()">Daftar Kunjungan</button>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Tentang Pagoda Tian Ti</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-card-icon">📍</div>
+                    <h3>Lokasi</h3>
+                    <p>Jl. Baratajaya XIII No.7, Gubeng, Surabaya</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">🕐</div>
+                    <h3>Jam Operasional</h3>
+                    <p>Setiap Hari<br>08:00 - 17:00 WIB</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-card-icon">✨</div>
+                    <h3>Fasilitas</h3>
+                    <p>Area Ibadah, Taman, Tempat Foto, Area Parkir</p>
+                </div>
+            </div>
+            <div class="description">
+                <p>Pagoda Tian Ti merupakan pagoda tertinggi di Indonesia dengan ketinggian mencapai 9 tingkat. 
+                Tempat ini menjadi destinasi wisata religi dan budaya yang menawarkan keindahan arsitektur 
+                Tionghoa yang megah serta pemandangan kota Surabaya yang menakjubkan dari ketinggian.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="section form-section" id="booking">
+        <div class="container">
+            <h2 class="section-title">Daftar Kunjungan</h2>
+            <div class="form-container">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama lengkap">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="email" placeholder="contoh@email.com">
+                </div>
+                <div class="form-group">
+                    <label>No. Telepon</label>
+                    <input type="tel" id="noTelp" placeholder="08xxxxxxxxxx">
+                </div>
+                <div class="form-group">
+                    <label>Tanggal Kunjungan</label>
+                    <input type="date" id="tanggal">
+                </div>
+                <div class="form-group">
+                    <label>Jumlah Pengunjung</label>
+                    <input type="number" id="jumlah" value="1" min="1">
+                </div>
+                <button class="btn-primary" style="width: 100%; margin-top: 1rem;" onclick="submitForm()">
+                    Daftar Sekarang
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visitors Table Section -->
+    <section class="section table-section">
+        <div class="container">
+            <h2 class="section-title">Daftar Pengunjung</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>No. Telepon</th>
+                            <th>Tanggal</th>
+                            <th>Jumlah</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="visitorTable">
+                        <tr>
+                            <td>1</td>
+                            <td>Nawfal Alfanni</td>
+                            <td>Nopal@email.com</td>
+                            <td>081234567890</td>
+                            <td>2024-11-25</td>
+                            <td>2 orang</td>
+                            <td><button class="btn-delete" onclick="deleteRow(this)">Hapus</button></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Rafa Huga</td>
+                            <td>Rafa@email.com</td>
+                            <td>082345678901</td>
+                            <td>2024-11-26</td>
+                            <td>4 orang</td>
+                            <td><button class="btn-delete" onclick="deleteRow(this)">Hapus</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="emptyState" class="empty-state" style="display: none;">
+                    Belum ada pengunjung yang terdaftar
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>Pagoda Tian Ti Surabaya</h3>
+            <p>Jl. Baratajaya XIII No.7, Gubeng, Surabaya</p>
+            <p>Buka Setiap Hari: 08:00 - 17:00 WIB</p>
+            <p style="margin-top: 1rem; opacity: 0.7;">© 2024 Pagoda Tian Ti. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToBooking() {
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function submitForm() {
+            const nama = document.getElementById('nama').value;
+            const email = document.getElementById('email').value;
+            const noTelp = document.getElementById('noTelp').value;
+            const tanggal = document.getElementById('tanggal').value;
+            const jumlah = document.getElementById('jumlah').value;
+
+            if (!nama || !email || !noTelp || !tanggal || !jumlah) {
+                alert('Mohon lengkapi semua field!');
+                return;
+            }
+
+            const table = document.getElementById('visitorTable');
+            const rowCount = table.rows.length + 1;
+            const newRow = table.insertRow();
+
+            newRow.innerHTML = `
+                <td>${rowCount}</td>
+                <td>${nama}</td>
+                <td>${email}</td>
+                <td>${noTelp}</td>
+                <td>${tanggal}</td>
+                <td>${jumlah} orang</td>
+                <td><button class="btn-delete" onclick="deleteRow(this)">Hapus</button></td>
+            `;
+
+            // Clear form
+            document.getElementById('nama').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('noTelp').value = '';
+            document.getElementById('tanggal').value = '';
+            document.getElementById('jumlah').value = '1';
+
+            updateEmptyState();
+            alert('Pendaftaran berhasil! Terima kasih telah mendaftar.');
+        }
+
+        function deleteRow(btn) {
+            const row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            updateRowNumbers();
+            updateEmptyState();
+        }
+
+        function updateRowNumbers() {
+            const table = document.getElementById('visitorTable');
+            const rows = table.rows;
+            for (let i = 0; i < rows.length; i++) {
+                rows[i].cells[0].innerHTML = i + 1;
+            }
+        }
+
+        function updateEmptyState() {
+            const table = document.getElementById('visitorTable');
+            const emptyState = document.getElementById('emptyState');
+            
+            if (table.rows.length === 0) {
+                document.querySelector('.table-container table').style.display = 'none';
+                emptyState.style.display = 'block';
+            } else {
+                document.querySelector('.table-container table').style.display = 'table';
+                emptyState.style.display = 'none';
+            }
+        }
+
+        // Initialize empty state check
+        updateEmptyState();
+    </script>
+</body>
+</html>
